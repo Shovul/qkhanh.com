@@ -89,7 +89,7 @@ box-icon  {
 }
 
 
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
   .works {
     gap: 0.6rem;
     margin: 50px 100px;
