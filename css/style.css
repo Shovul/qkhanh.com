@@ -16,7 +16,7 @@ body {
 }
 .navbar p {
   flex: 1;
-  font-size: 42px;
+  font-size: 3rem;
 }
 .navbar .option {
   flex: 1.5;
@@ -86,4 +86,32 @@ box-icon  {
 }
 .works img {
   width: 100%;
+}
+
+
+@media (max-width: 800px) {
+  .works {
+    columns: 15rem 2;
+    gap: 0.6rem;
+    margin: 50px 150px;
+  }
+  .option *{
+    display: none;
+  }
+}
+@media (max-width: 500px) {
+  .works {
+    columns: 10rem 1;
+    gap: 0.6rem;
+  }
+  .works img {
+    width: 100%;
+  }
+  .option *{
+    display: none;
+  }
+  .navbar p {
+    font-size: 1.2rem;
+  }
+
 }
