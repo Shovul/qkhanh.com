@@ -1,0 +1,89 @@
+@import url('manrope.css');
+
+body {
+  font-size: 36px;
+  font-family: Manrope-Extrabold;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar {
+  padding: 5px 70px;
+  display: flex;
+  flex-basis: 0;
+  align-items: center;
+  background-color: rgb(191, 191, 191);
+}
+.navbar p {
+  flex: 1;
+  font-size: 42px;
+}
+.navbar .option {
+  flex: 1.5;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+#gallery-list {
+  position: absolute;
+  background-color: rgb(191, 191, 191);
+  padding: 20px 50px 8px 20px;
+  list-style-type: none;
+  font-family:  Manrope-Light;
+  font-size: 1.175rem;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  display: none;
+}
+#gallery-list a {
+  margin: 20px;
+  display: block;
+  text-decoration: none;
+  color: black;
+}
+.navbar button {
+  font-size: 30px;
+  font-family: Manrope-Light;
+  border: none;
+  background: none;
+}
+.navbar button:hover {
+  cursor: pointer;
+}
+.navbar button:hover + box-icon {
+  transform: rotate(180deg);
+  transition: 0.2s;
+}
+.portfolio:hover #gallery-list {
+  display: block;
+}
+#gallery-list #sections:hover {
+  color: rgb(255, 255, 255);
+  text-decoration: underline;
+}
+#gallery-list #current {
+  cursor: default;
+  pointer-events: none;
+}
+box-icon  {
+  transition: 0.2s;
+}
+.navbar box-icon {
+  height: 1.2rem;
+}
+.navbar #contact {
+  text-decoration: none;
+  color: black;
+}
+.navbar #contact:hover {
+  text-decoration: underline;
+}
+
+.works {
+  columns: 15rem 3;
+  gap: 0.6rem;
+  margin: 50px 150px;
+}
+.works img {
+  width: 100%;
+}
