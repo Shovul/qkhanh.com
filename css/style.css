@@ -91,9 +91,8 @@ box-icon  {
 
 @media (max-width: 800px) {
   .works {
-    columns: 15rem 2;
     gap: 0.6rem;
-    margin: 50px 150px;
+    margin: 50px 100px;
   }
   .option *{
     display: none;
@@ -101,8 +100,8 @@ box-icon  {
 }
 @media (max-width: 500px) {
   .works {
-    columns: 10rem 1;
     gap: 0.6rem;
+    margin: 20px;
   }
   .works img {
     width: 100%;
@@ -113,5 +112,4 @@ box-icon  {
   .navbar p {
     font-size: 1.2rem;
   }
-
 }
