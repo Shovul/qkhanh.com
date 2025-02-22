@@ -1,5 +1,11 @@
 @import url('manrope.css');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+
+*{
+  margin: 0;
+  padding: 0;
+}
 body {
   font-size: 36px;
   font-family: Manrope-Extrabold;
@@ -25,7 +31,7 @@ body {
   gap: 30px;
 }
 #gallery-list {
-  position: absolute;
+  position: fixed;
   background-color: rgb(191, 191, 191);
   padding: 20px 50px 8px 20px;
   list-style-type: none;
@@ -64,6 +70,8 @@ body {
 #gallery-list #current {
   cursor: default;
   pointer-events: none;
+  text-decoration: underline;
+  font-weight: bold;
 }
 box-icon  {
   transition: 0.2s;
@@ -74,6 +82,7 @@ box-icon  {
 .navbar #contact {
   text-decoration: none;
   color: black;
+  text-align: center;
 }
 .navbar #contact:hover {
   text-decoration: underline;
@@ -87,15 +96,132 @@ box-icon  {
 .works img {
   width: 100%;
 }
+.portfolio > svg {
+  display: none;
+}
+
+.bio {
+  margin: 5vh 20vw;
+
+  > div {
+    padding-bottom: 8px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.4);
+  }
+  > div > h3 {
+    font-size: 2rem;
+  }
+  > div > a {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.3rem;
+    margin-left: 1rem;
+    text-decoration: none;
+    color: rgba(22, 18, 18, 1);
+  }
+  > div > a:hover {
+    color: rgb(21, 73, 152);
+    text-decoration: underline;
+  }
+}
+
+.contact-info {
+  margin-left: 5vw;
+  border: 3px solid rgb(32, 31, 31);
+  padding: 5%;
+  > div:not(:last-child){
+    font-size: 1.5rem;
+  }
+  > div {
+    margin-bottom: 10px;
+  }
+  > div > div {
+    font-size: 1.2rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    letter-spacing: 2px;
+  }
+}
+.social {
+  box-sizing: border-box;
+  min-height: 100vh;
+  background: #ebebf6;
+  padding: 4vh 20vw;
+}
+.socials-container{
+  margin-top: 8%;
+  font-size: medium;
+  display: flex;
+  gap: 20px;
+}
+.socials-container a{
+  background-color: white;
+  padding: 1em;
+  border-radius: 50%;
+  height: 64px;
+  width: 64px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+}
+.socials-container a svg{
+  height: 32px;
+}
+.socials-container a::before{
+  content: attr(data-social);
+  position: absolute;
+  background-color: var(--accent-color);
+  color: white;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  border-radius: 100px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+  transform: translateY(-30px) rotate(25deg);
+  opacity: 0;
+  transition: 200ms cubic-bezier(.42,0,.44,1.68);
+}
+.socials-container a:hover{
+  background-color: var(--accent-color);
+  fill: white;
+}
+.socials-container a::after{
+  content: '';
+  position: absolute;
+  height: 0;
+  width: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 10px solid var(--accent-color);
+  transform: translateY(0) rotate(25deg);
+  opacity: 0;
+  transition: 200ms cubic-bezier(.42,0,.44,1.68);
+}
+.socials-container a:hover::before{
+  transform: translateY(-65px) rotate(0);
+  opacity: 1;
+}
+.socials-container a:hover::after{
+  transform: translateY(-42px) rotate(0);
+  opacity: 1;
+}
 
 
 @media (max-width: 1000px) {
+  .navbar {
+    padding: 5px 30px;
+  }
   .works {
     gap: 0.6rem;
     margin: 50px 100px;
   }
-  .option *{
+  .portfolio > button, .portfolio > box-icon {
     display: none;
+  }
+  .portfolio > svg {
+    display: inline;
+  }
+  .option {
+    flex-direction:  row-reverse;
+    padding-right: 20vw;
   }
 }
 @media (max-width: 700px) {
@@ -106,10 +232,16 @@ box-icon  {
   .works img {
     width: 100%;
   }
-  .option *{
+  .portfolio > button, .portfolio > box-icon {
     display: none;
+  }
+  .portfolio > svg {
+    display: inline;
   }
   .navbar p {
     font-size: 1.2rem;
+  }
+  .navbar {
+    padding: 5px 30px;
   }
 }
