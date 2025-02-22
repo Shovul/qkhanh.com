@@ -216,6 +216,9 @@ box-icon  {
   .portfolio > button, .portfolio > box-icon {
     display: none;
   }
+  .option > #contact {
+    font-size: 1rem;
+  }
   .portfolio > svg {
     display: inline;
   }
@@ -231,12 +234,6 @@ box-icon  {
   }
   .works img {
     width: 100%;
-  }
-  .portfolio > button, .portfolio > box-icon {
-    display: none;
-  }
-  .portfolio > svg {
-    display: inline;
   }
   .navbar p {
     font-size: 1.2rem;
