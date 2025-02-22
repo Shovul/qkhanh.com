@@ -9,6 +9,7 @@
 body {
   font-size: 36px;
   font-family: Manrope-Extrabold;
+  background: #eeeef6;
   padding: 0;
   margin: 0;
 }
@@ -18,7 +19,7 @@ body {
   display: flex;
   flex-basis: 0;
   align-items: center;
-  background-color: rgb(191, 191, 191);
+  background-color: #c5c5e7;
 }
 .navbar p {
   flex: 1;
@@ -32,14 +33,16 @@ body {
 }
 #gallery-list {
   position: fixed;
-  background-color: rgb(191, 191, 191);
+  background-color: rgba(255, 255, 255, 0.9);
   padding: 20px 50px 8px 20px;
   list-style-type: none;
   font-family:  Manrope-Light;
   font-size: 1.175rem;
   border-radius: 8px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  display: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: .1s;
 }
 #gallery-list a {
   margin: 20px;
@@ -61,10 +64,11 @@ body {
   transition: 0.2s;
 }
 .portfolio:hover #gallery-list {
-  display: block;
+  opacity: 1;
+  pointer-events: all;
 }
 #gallery-list #sections:hover {
-  color: rgb(255, 255, 255);
+  color: #303092;
   text-decoration: underline;
 }
 #gallery-list #current {
@@ -125,7 +129,8 @@ box-icon  {
 
 .contact-info {
   margin-left: 5vw;
-  border: 3px solid rgb(32, 31, 31);
+  background: #f3f3f4;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
   padding: 5%;
   > div:not(:last-child){
     font-size: 1.5rem;
@@ -141,9 +146,10 @@ box-icon  {
 }
 .social {
   box-sizing: border-box;
-  min-height: 100vh;
-  background: #ebebf6;
   padding: 4vh 20vw;
+  h2 {
+    margin-bottom: .5em;
+  }
 }
 .socials-container{
   margin-top: 8%;
@@ -153,7 +159,6 @@ box-icon  {
 }
 .socials-container a{
   background-color: white;
-  padding: 1em;
   border-radius: 50%;
   height: 64px;
   width: 64px;
@@ -167,6 +172,7 @@ box-icon  {
   height: 32px;
 }
 .socials-container a::before{
+  pointer-events: none;
   content: attr(data-social);
   position: absolute;
   background-color: var(--accent-color);
@@ -184,6 +190,7 @@ box-icon  {
   fill: white;
 }
 .socials-container a::after{
+  pointer-events: none;
   content: '';
   position: absolute;
   height: 0;
@@ -242,16 +249,25 @@ box-icon  {
     padding: 5px 10px;
   }
   .social {
-    padding: 10px;
+    padding: 8px;
     >h2 {
       font-size: 2rem;
+      text-align: center;
     }
+  }
+  .socials-container a {
+    height: 44px;
+    width: 44px;
+    font-size: .8rem;
+    svg {
+      height: 22px;
+    }
+  }
+  .socials-container a:hover::after{
+    transform: translateY(-46px);
   }
   .contact-info {
     margin: 0;
-  }
-  .socials-container {
-    flex-wrap: wrap;
   }
   .bio {
     margin: 10px;
