@@ -223,7 +223,7 @@ box-icon  {
     display: inline;
   }
   .option {
-    flex-direction:  row-reverse;
+    /* flex-direction:  row-reverse; */
     padding-right: 20vw;
   }
 }
@@ -239,6 +239,31 @@ box-icon  {
     font-size: 1.2rem;
   }
   .navbar {
-    padding: 5px 30px;
+    padding: 5px 10px;
+  }
+  .social {
+    padding: 10px;
+    >h2 {
+      font-size: 2rem;
+    }
+  }
+  .contact-info {
+    margin: 0;
+  }
+  .socials-container {
+    flex-wrap: wrap;
+  }
+  .bio {
+    margin: 10px;
+    > div {
+      font-size: 1.2rem;
+    }
+    > div > h3 {
+      font-size: 1.5rem;
+    }
+    > div > a {
+      font-size: 1rem;
+      margin: 0;
+    }
   }
 }
