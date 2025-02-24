@@ -108,6 +108,8 @@ box-icon  {
   margin: 5vh 20vw;
 
   > div {
+    display: flex;
+    flex-direction: column;
     padding-bottom: 8px;
     border-bottom: 2px solid rgba(0, 0, 0, 0.4);
   }
@@ -224,7 +226,7 @@ box-icon  {
     display: none;
   }
   .option > #contact {
-    font-size: 1rem;
+    font-size: 2rem;
   }
   .portfolio > svg {
     display: inline;
@@ -235,6 +237,12 @@ box-icon  {
   }
 }
 @media (max-width: 700px) {
+  #gallery-list {
+    left: 20%;
+  }
+  .option > #contact {
+    font-size: 1rem;
+  }
   .works {
     gap: 0.6rem;
     margin: 20px;
